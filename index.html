@@ -1,42 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dumb Units!</title>
-  <meta name="description" content="Learn Celsius and Fahrenheit intuitively. Dumb Units! helps you understand temperature the way locals do—no math, no formulas.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dumb Units! — See it. Know it.</title>
+  <meta name="description" content="Dumb Units! builds real intuition for Celsius and Fahrenheit through visual learning and practical contexts. Basic HTML/CSS site with a refined design.">
+  <meta name="color-scheme" content="light dark">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
     :root{
-      --bg:#f8f9fa;--text:#212529;--muted:#6c757d;
-      --accent:#0ea5e9;--border:rgba(0,0,0,.1);--shadow:rgba(0,0,0,.12);
+      --bg: #f7f8fb; --surface: #ffffff; --ink: #121417; --muted: #667085; --line: rgba(2,12,27,.10);
+      --shadow: 0 10px 30px rgba(2,12,27,.08); --radius: 16px;
+      --teal: #18E0D8; --gold: #FFD54C; --accent: #10b7b0; --accent-contrast: #063b39;
     }
-    @media(prefers-color-scheme:dark){
-      :root{--bg:#1a1a1a;--text:#f0f0f0;--muted:#b0b0b0;--accent:#38bdf8;--border:rgba(255,255,255,.12);--shadow:rgba(0,0,0,.35);}
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0f1115; --surface:#1a1f26; --ink:#f2f4f8; --muted:#b7c0cc; --line:rgba(255,255,255,.10);
+             --shadow:0 16px 40px rgba(0,0,0,.45); --accent:#38d0ca; --accent-contrast:#081f1e; }
     }
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
-      background:var(--bg);color:var(--text);min-height:100vh;text-align:center;padding:48px 20px;
+      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+      background: radial-gradient(1200px 600px at 50% -200px, rgba(24,224,216,.15), transparent 70%),
+                  radial-gradient(900px 500px at 100% 0, rgba(255,213,76,.12), transparent 60%),
+                  var(--bg);
+      color:var(--ink); line-height:1.6;
     }
-    img{max-width:480px;width:90%;height:auto;filter:drop-shadow(0 6px 18px var(--shadow));margin-bottom:28px;}
-    h1{font-size:clamp(32px,5vw,52px);font-weight:900;margin-bottom:12px;}
-    p{max-width:600px;margin:0 auto 24px;color:var(--muted);font-size:18px;}
-    a.btn{
-      display:inline-block;padding:12px 20px;margin:6px;border-radius:10px;border:2px solid var(--accent);
-      color:var(--accent);text-decoration:none;font-weight:700;transition:all .2s ease;
-    }
-    a.btn:hover{background:var(--accent);color:#fff;}
-    footer{margin-top:48px;font-size:14px;color:var(--muted);}
-    footer a{color:var(--muted);text-decoration:none;}
-    footer a:hover{color:var(--accent);text-decoration:underline;}
+    .container{max-width:1120px;margin:0 auto;padding:28px 20px 72px}
+    .logo-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0 18px}
+    .logo{width:min(680px,92%);height:auto;filter: drop-shadow(0 14px 28px rgba(2,12,27,.12));}
+    .hero{text-align:center;padding:6px 0 14px}
+    .kicker{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-contrast);
+      background:linear-gradient(90deg, rgba(255,213,76,.35), rgba(24,224,216,.35));border:1px solid var(--line);
+      padding:6px 10px;border-radius:999px;margin-bottom:12px}
+    h1{font-size:clamp(36px,6vw,64px);line-height:1.08;margin:6px 0 10px;letter-spacing:-.02em}
+    .sub{font-size:clamp(18px,2.6vw,22px);color:var(--muted);max-width:780px;margin:0 auto}
+    .cta-row{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+    .btn{--btn-bg:transparent;--btn-fg:var(--accent);display:inline-block;text-decoration:none;border:2px solid var(--accent);
+      color:var(--btn-fg);padding:12px 18px;border-radius:12px;font-weight:700;transition:transform .16s ease, background .16s ease, color .16s ease;background:var(--btn-bg)}
+    .btn:hover{transform:translateY(-1px);background:var(--accent);color:#fff}
+    .btn.secondary{border-color:var(--line);color:var(--ink);background:var(--surface)}
+    .btn.secondary:hover{border-color:var(--accent);color:#fff;background:var(--accent)}
+    .section{margin-top:56px}
+    .section h2{font-size:clamp(26px,3.4vw,32px);margin:0 0 14px}
+    .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 20px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card::after{content:"";position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:radial-gradient(80px 80px at 50% 50%, rgba(24,224,216,.18), transparent 70%);transform:rotate(18deg);pointer-events:none}
+    .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .card h3{font-size:20px;margin:0 0 6px}
+    .card p{margin:0;color:var(--ink)}
+    .split{display:grid;gap:26px;grid-template-columns:1.1fr 1fr;align-items:center}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px dashed var(--line);background:linear-gradient(90deg, rgba(255,213,76,.18), rgba(24,224,216,.18));font-weight:600;color:var(--accent-contrast)}
+    .stat-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
+    .stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow)}
+    .stat strong{display:block;font-size:24px;line-height:1.1}
+    .stat span{color:var(--muted);font-size:13px}
+    .faq{border-top:1px solid var(--line);padding-top:20px}
+    details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+    details + details{margin-top:12px}
+    summary{cursor:pointer;font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    .faq p{margin:10px 0 0;color:var(--muted)}
+    footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+    footer a{color:var(--muted);text-decoration:none}
+    footer a:hover{color:var(--accent);text-decoration:underline}
+    @media (prefers-reduced-motion: reduce){ .btn,.card{transition:none!important} }
   </style>
 </head>
 <body>
-  <img src="banner_logo.png" alt="Dumb Units!">
-  <h1>See it. Know it.</h1>
-  <p>Learn Celsius and Fahrenheit the intuitive way—through visuals and real-world context. Dumb Units! builds true temperature fluency without formulas or memorization.</p>
-  <a href="/privacy.html" class="btn">Privacy & Terms</a>
-  <a href="/contact.html" class="btn">Contact</a>
-  <footer><p>© 2025 KeepAddIt Works, LLC</p></footer>
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="banner_logo.png" alt="Dumb Units! logo" class="logo" width="1400" height="372">
+    </div>
+
+    <section class="hero" aria-label="Intro">
+      <span class="kicker">Temperature fluency</span>
+      <h1>See it. Know it.</h1>
+      <p class="sub">Build intuition for Celsius and Fahrenheit through visual learning and real contexts—no formulas, no memorization. Perfect for travel and the kitchen.</p>
+      <div class="cta-row">
+        <a class="btn" href="#" aria-label="Download on the App Store">App Store</a>
+        <a class="btn secondary" href="/contact.html">Contact</a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="eyebrow">Visual</div>
+          <h3>Temperature Bar</h3>
+          <p>See equivalences at a glance. The Temperature Bar maps °C and °F side‑by‑side so common values become familiar on sight.</p>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Context</div>
+          <h3>Weather Game</h3>
+          <p>Travel‑inspired scenarios calibrate what “cold,” “mild,” and “hot” feel like in both units, tied to real places and seasons.</p>
+        </article>
+        <article class="card">
+          <div class="eyebrow">Practice</div>
+          <h3>Kitchen Game</h3>
+          <p>Reinforce ranges with oven and stovetop tasks from international cuisines—learn by doing, not converting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split" aria-label="Results">
+      <div>
+        <span class="pill">Designed for fast results</span>
+        <h2 style="margin:8px 0 10px">A practical, two‑week path</h2>
+        <p class="sub" style="text-align:left; margin:0">Short, focused sessions build durable recall. Track accuracy over time and switch labels on/off for more challenge.</p>
+        <div class="stat-row">
+          <div class="stat"><strong>10–15 min</strong><span>per day</span></div>
+          <div class="stat"><strong>~14 days</strong><span>to basic fluency</span></div>
+          <div class="stat"><strong>0 ads</strong><span>works offline</span></div>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Privacy‑respecting</h3><p>No accounts and no personal data collection.</p></div>
+        <div class="card"><h3>Lightweight</h3><p>Optimized for quick practice on the go.</p></div>
+      </div>
+    </section>
+
+    <section class="section faq" aria-label="FAQ">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is any math required?</summary>
+        <p>No. You learn visually via the Temperature Bar and through context‑based questions.</p>
+      </details>
+      <details>
+        <summary>How long does it take to feel confident?</summary>
+        <p>Most learners reach basic fluency in about two weeks with regular, short sessions.</p>
+      </details>
+      <details>
+        <summary>Does it work offline?</summary>
+        <p>Yes. All content is available on‑device.</p>
+      </details>
+    </section>
+
+    <footer>
+      <a href="/privacy.html">Privacy & Terms</a> • <a href="/contact.html">Contact</a><br>
+      <small>© 2025 KeepAddIt Works, LLC</small>
+    </footer>
+  </div>
 </body>
 </html>
