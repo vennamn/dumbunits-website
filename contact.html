@@ -3,45 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Dumb Units!</title>
+  <title>Contact – Dumb Units!</title>
   <meta name="description" content="Contact the Dumb Units! team.">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
     :root{
       --bg:#f8f9fa;--panel:#ffffff;--text:#212529;--muted:#6c757d;
       --accent:#0ea5e9;--border:rgba(0,0,0,.1);--shadow:rgba(0,0,0,.12);
+      --success:#28a745;--error:#dc3545;
     }
     @media(prefers-color-scheme:dark){
-      :root{--bg:#1a1a1a;--panel:#2b2b2b;--text:#f0f0f0;--muted:#b0b0b0;--accent:#38bdf8;--border:rgba(255,255,255,.12);--shadow:rgba(0,0,0,.35);}
+      :root{--bg:#1a1a1a;--panel:#2b2b2b;--text:#f0f0f0;--muted:#b0b0b0;--accent:#38bdf8;--border:rgba(255,255,255,.12);--shadow:rgba(0,0,0,.35);--success:#5cb85c;--error:#d9534f;}
     }
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:40px 20px;}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:40px 20px;line-height:1.6;}
     .wrap{max-width:640px;margin:0 auto;text-align:center;}
     img{max-width:360px;width:90%;margin-bottom:20px;filter:drop-shadow(0 6px 18px var(--shadow));}
-    form{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:left;}
-    label{display:block;margin-top:14px;font-weight:600;}
-    input,textarea{width:100%;padding:10px;border:1px solid var(--border);border-radius:8px;font-size:16px;}
+    h1{font-size:28px;margin-bottom:8px;}
+    .subtitle{color:var(--muted);margin-bottom:24px;}
+    form{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:left;box-shadow:0 4px 20px var(--shadow);}
+    .form-group{margin-bottom:20px;}
+    label{display:block;margin-bottom:6px;font-weight:600;font-size:14px;}
+    input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:16px;background:var(--bg);color:var(--text);transition:border-color 0.3s ease;}
+    input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,165,233,0.1);}
     textarea{resize:vertical;min-height:120px;}
-    button{margin-top:20px;background:var(--accent);color:#fff;border:none;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;}
-    button:hover{filter:brightness(.95);}
-    a{color:var(--accent);text-decoration:none;}
+    /* Honeypot field - hidden from users */
+    .website-field{position:absolute;left:-9999px;top:-9999px;height:0;width:0;opacity:0;pointer-events:none;}
+    button{width:100%;margin-top:20px;background:var(--accent);color:#fff;border:none;padding:14px 20px;border-radius:10px;font-weight:700;font-size:16px;cursor:pointer;transition:all 0.3s ease;}
+    button:hover:not(:disabled){filter:brightness(.9);transform:translateY(-1px);}
+    button:disabled{opacity:0.6;cursor:not-allowed;}
+    .message{padding:16px;border-radius:8px;margin-bottom:24px;display:none;animation:slideIn 0.3s ease;}
+    .message.success{background:rgba(40,167,69,0.1);border:1px solid var(--success);color:var(--success);}
+    .message.error{background:rgba(220,53,69,0.1);border:1px solid var(--error);color:var(--error);}
+    @keyframes slideIn{from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
+    .back-home{margin-top:24px;}
+    .back-home a{color:var(--accent);text-decoration:none;font-weight:500;}
+    .back-home a:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
   <div class="wrap">
     <img src="banner_logo.png" alt="Dumb Units!">
     <h1>Contact Us</h1>
-    <p style="color:var(--muted);margin-bottom:16px;">Have a question or suggestion? We'd love to hear from you.</p>
-    <form name="contact" method="POST" data-netlify="true">
+    <p class="subtitle">Have a question or suggestion? We'd love to hear from you.</p>
+    
+    <div id="successMessage" class="message success">
+      Thank you for your message! We'll get back to you within 24 hours.
+    </div>
+    
+    <div id="errorMessage" class="message error">
+      Something went wrong. Please try again later or email us directly at support@dumbunits.com.
+    </div>
+    
+    <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
-      <label for="name">Name *</label>
-      <input id="name" name="name" required>
-      <label for="email">Email *</label>
-      <input id="email" name="email" type="email" required>
-      <label for="message">Message *</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send</button>
+      
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <!-- Honeypot field - bots will fill this but humans won't see it -->
+      <div class="website-field">
+        <label for="bot-field">Don't fill this out if you're human:</label>
+        <input type="text" name="bot-field" tabindex="-1" autocomplete="off">
+      </div>
+      
+      <div class="form-group">
+        <label for="subject">Subject *</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      
+      <button type="submit">Send Message</button>
     </form>
-    <p style="margin-top:20px;"><a href="/index.html">← Back to Home</a></p>
+    
+    <div class="back-home">
+      <a href="/">← Back to Home</a>
+    </div>
   </div>
+  
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Check honeypot field
+      const honeypot = document.querySelector('[name="bot-field"]').value;
+      if (honeypot) {
+        // Bot detected - silently fail
+        document.getElementById('successMessage').style.display = 'block';
+        this.reset();
+        return;
+      }
+      
+      // Get form data
+      const formData = new FormData(this);
+      const button = this.querySelector('button');
+      
+      // Disable button while sending
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      
+      // Send form to Netlify
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('successMessage').style.display = 'block';
+          document.getElementById('errorMessage').style.display = 'none';
+          this.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch(error => {
+        document.getElementById('errorMessage').style.display = 'block';
+        document.getElementById('successMessage').style.display = 'none';
+      })
+      .finally(() => {
+        button.disabled = false;
+        button.textContent = 'Send Message';
+      });
+    });
+  </script>
 </body>
 </html>
