@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dumb Units! — See it. Know it.</title>
+  <title>Dumb Units! – See it. Know it.</title>
   <meta name="description" content="Dumb Units! builds real intuition for Celsius and Fahrenheit through visual learning and practical contexts. Basic HTML/CSS site with a refined design.">
   <meta name="color-scheme" content="light dark">
   <style>
@@ -63,6 +63,23 @@
     footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
     footer a{color:var(--muted);text-decoration:none}
     footer a:hover{color:var(--accent);text-decoration:underline}
+    
+    /* Mobile responsive fixes */
+    @media (max-width: 768px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+      .split > div:first-child {
+        text-align: center;
+      }
+      .split .sub {
+        text-align: center !important;
+      }
+      .stat-row {
+        justify-content: center;
+      }
+    }
+    
     @media (prefers-reduced-motion: reduce){ .btn,.card{transition:none!important} }
   </style>
 </head>
@@ -88,15 +105,15 @@
         <article class="card">
           <div class="eyebrow">Visual</div>
           <h3>Temperature Bar</h3>
-          <p>See equivalences at a glance. The Temperature Bar maps °C and °F side‑by‑side so common values become familiar on sight.</p>
+          <p>See equivalences at a glance. The Temperature Bar maps °C and °F side-by-side so key equivalent pairs become familiar on sight.</p>
         </article>
         <article class="card">
           <div class="eyebrow">Context</div>
           <h3>Weather Game</h3>
-          <p>Travel‑inspired scenarios calibrate what “cold,” “mild,” and “hot” feel like in both units, tied to real places and seasons.</p>
+          <p>Travel-inspired scenarios provide temperature practice across hundreds of global destinations.</p>
         </article>
         <article class="card">
-          <div class="eyebrow">Practice</div>
+          <div class="eyebrow">Get the "Reps"</div>
           <h3>Kitchen Game</h3>
           <p>Reinforce ranges with oven and stovetop tasks from international cuisines—learn by doing, not converting.</p>
         </article>
@@ -106,7 +123,7 @@
     <section class="section split" aria-label="Results">
       <div>
         <span class="pill">Designed for fast results</span>
-        <h2 style="margin:8px 0 10px">A practical, two‑week path</h2>
+        <h2 style="margin:8px 0 10px">A practical, two-week path</h2>
         <p class="sub" style="text-align:left; margin:0">Short, focused sessions build durable recall. Track accuracy over time and switch labels on/off for more challenge.</p>
         <div class="stat-row">
           <div class="stat"><strong>10–15 min</strong><span>per day</span></div>
@@ -115,7 +132,7 @@
         </div>
       </div>
       <div class="grid">
-        <div class="card"><h3>Privacy‑respecting</h3><p>No accounts and no personal data collection.</p></div>
+        <div class="card"><h3>Privacy-respecting</h3><p>No accounts and no personal data collection.</p></div>
         <div class="card"><h3>Lightweight</h3><p>Optimized for quick practice on the go.</p></div>
       </div>
     </section>
@@ -124,15 +141,15 @@
       <h2>FAQ</h2>
       <details>
         <summary>Is any math required?</summary>
-        <p>No. You learn visually via the Temperature Bar and through context‑based questions.</p>
+        <p>Not really. You learn visually via the Temperature Bar and through context-based questions.</p>
       </details>
       <details>
         <summary>How long does it take to feel confident?</summary>
-        <p>Most learners reach basic fluency in about two weeks with regular, short sessions.</p>
+        <p>Most learners reach basic fluency in weather temperatures within about two weeks just playing a few times per day. Comfort with Kitchen Temperatures seems to take slightly longer.</p>
       </details>
       <details>
         <summary>Does it work offline?</summary>
-        <p>Yes. All content is available on‑device.</p>
+        <p>Yes. All content is available on-device.</p>
       </details>
     </section>
 
