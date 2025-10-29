@@ -40,6 +40,14 @@
     .btn:hover{transform:translateY(-1px);background:var(--accent);color:#fff}
     .btn.secondary{border-color:var(--line);color:var(--ink);background:var(--surface)}
     .btn.secondary:hover{border-color:var(--accent);color:#fff;background:var(--accent)}
+    .app-badge{display:inline-block;transition:transform .16s ease}
+    .app-badge:hover{transform:translateY(-1px)}
+    .app-badge img{height:54px;width:auto;vertical-align:middle}
+    .badge-dark{display:none}
+    @media (prefers-color-scheme: dark){
+      .badge-light{display:none}
+      .badge-dark{display:inline-block}
+    }
     .section{margin-top:56px}
     .section h2{font-size:clamp(26px,3.4vw,32px);margin:0 0 14px}
     .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
@@ -99,7 +107,10 @@
       <h1>See it. Know it.</h1>
       <p class="sub">Build intuition for Celsius and Fahrenheit through visual learning and real contexts—no formulas, no memorization. Perfect for travel and the kitchen.</p>
       <div class="cta-row">
-        <a class="btn" href="#" aria-label="Download on the App Store">App Store</a>
+        <a href="https://apps.apple.com/us/app/dumb-units/id6754274327?itscg=30200&itsct=apps_box_badge&mttnsubad=6754274327" class="app-badge" aria-label="Download on the App Store">
+          <img src="black.svg" alt="Download on the App Store" class="badge-light">
+          <img src="white.svg" alt="Download on the App Store" class="badge-dark">
+        </a>
         <a class="btn secondary" href="/contact.html">Contact</a>
       </div>
     </section>
