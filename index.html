@@ -80,6 +80,11 @@
       }
     }
     
+    .video-section{margin-top:56px}
+    .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:var(--radius);
+      box-shadow:var(--shadow);background:var(--surface);border:1px solid var(--line)}
+    .video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    
     @media (prefers-reduced-motion: reduce){ .btn,.card{transition:none!important} }
   </style>
 </head>
@@ -96,6 +101,17 @@
       <div class="cta-row">
         <a class="btn" href="#" aria-label="Download on the App Store">App Store</a>
         <a class="btn secondary" href="/contact.html">Contact</a>
+      </div>
+    </section>
+
+    <section class="section video-section" aria-labelledby="video-title">
+      <h2 id="video-title">What is Dumb Units?</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/JFnPHvKNohs" 
+                title="Dumb Units! Explanation" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
       </div>
     </section>
 
