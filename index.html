@@ -42,7 +42,9 @@
     .btn.secondary:hover{border-color:var(--accent);color:#fff;background:var(--accent)}
     .app-badge{display:inline-block;transition:transform .16s ease}
     .app-badge:hover{transform:translateY(-1px)}
-    .app-badge img{height:68px;width:auto;vertical-align:middle}
+    .app-badge img{width:auto;vertical-align:middle}
+    .app-badge:first-of-type img{height:68px} /* Apple badge */
+    .app-badge:last-of-type img{height:63px} /* Google Play badge - slightly shorter due to extra padding in SVG */
     .badge-dark{display:none}
     @media (prefers-color-scheme: dark){
       .badge-light{display:none}
