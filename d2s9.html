@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finally Understand Fahrenheit Oven Temperatures - Dumb Units!</title>
+  <meta name="description" content="Stop converting. Start knowing. Learn Fahrenheit cooking temperatures through visual practice—no math formulas needed.">
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root{
+      --bg: #f7f8fb; --surface: #ffffff; --ink: #121417; --muted: #667085; --line: rgba(2,12,27,.10);
+      --shadow: 0 10px 30px rgba(2,12,27,.08); --radius: 16px;
+      --teal: #18E0D8; --gold: #FFD54C; --accent: #10b7b0; --accent-contrast: #063b39;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0f1115; --surface:#1a1f26; --ink:#f2f4f8; --muted:#b7c0cc; --line:rgba(255,255,255,.10);
+             --shadow:0 16px 40px rgba(0,0,0,.45); --accent:#38d0ca; --accent-contrast:#081f1e; }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+      background: radial-gradient(1200px 600px at 50% -200px, rgba(24,224,216,.15), transparent 70%),
+                  radial-gradient(900px 500px at 100% 0, rgba(255,213,76,.12), transparent 60%),
+                  var(--bg);
+      color:var(--ink); line-height:1.6;
+    }
+    .container{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+    .logo-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0 18px}
+    .logo{width:min(680px,92%);height:auto;filter: drop-shadow(0 14px 28px rgba(2,12,27,.12));}
+    .hero{text-align:center;padding:6px 0 14px}
+    .kicker{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-contrast);
+      background:linear-gradient(90deg, rgba(255,213,76,.35), rgba(24,224,216,.35));border:1px solid var(--line);
+      padding:6px 10px;border-radius:999px;margin-bottom:12px}
+    h1{font-size:clamp(32px,5.5vw,48px);line-height:1.12;margin:6px 0 10px;letter-spacing:-.02em}
+    h2{font-size:clamp(24px,3.4vw,32px);margin:40px 0 16px;line-height:1.2}
+    .sub{font-size:clamp(18px,2.6vw,22px);color:var(--muted);max-width:680px;margin:0 auto}
+    p{margin:16px 0;line-height:1.7}
+    .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
+    .app-badge{display:inline-block;transition:transform .16s ease}
+    .app-badge:hover{transform:translateY(-1px)}
+    .app-badge img{width:auto;vertical-align:middle}
+    .app-badge:first-of-type img{height:68px}
+    .app-badge:last-of-type img{height:96px}
+    .badge-dark{display:none}
+    @media (prefers-color-scheme: dark){
+      .badge-light{display:none}
+      .badge-dark{display:inline-block}
+    }
+    .section{margin-top:48px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:20px 0;position:relative;overflow:hidden}
+    .card::after{content:"";position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:radial-gradient(80px 80px at 50% 50%, rgba(24,224,216,.18), transparent 70%);transform:rotate(18deg);pointer-events:none}
+    .card h3{font-size:22px;margin:0 0 12px;color:var(--ink)}
+    .card p{margin:8px 0}
+    .highlight-box{background:linear-gradient(90deg, rgba(255,213,76,.12), rgba(24,224,216,.12));border:1px solid var(--line);border-radius:12px;padding:20px;margin:24px 0}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px dashed var(--line);background:linear-gradient(90deg, rgba(255,213,76,.18), rgba(24,224,216,.18));font-weight:600;color:var(--accent-contrast);margin-bottom:12px}
+    ul{line-height:1.8;margin:12px 0;padding-left:20px}
+    ul li{margin:8px 0}
+    strong{color:var(--ink)}
+    .price{font-size:28px;font-weight:700;color:var(--accent)}
+    footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+    footer a{color:var(--muted);text-decoration:none}
+    footer a:hover{color:var(--accent);text-decoration:underline}
+    @media (prefers-reduced-motion: reduce){ .card,.app-badge{transition:none!important} }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z52XG40YPX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Z52XG40YPX');
+  </script>
+
+  <!-- Reddit Pixel -->
+  <script>
+  !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_i06z11poinmi');rdt('track', 'PageVisit');
+  </script>
+  <!-- End Reddit Pixel -->
+
+</head>
+<body>
+  <div class="container">
+    <div class="logo-wrap">
+      <img src="banner_logo.png" alt="Dumb Units! logo" class="logo" width="1400" height="372">
+    </div>
+
+    <section class="hero" aria-label="Intro">
+      <span class="kicker">For international home cooks</span>
+      <h1>Finally understand Fahrenheit oven temperatures—no math formulas needed</h1>
+      <p class="sub">See 350°F and instantly know: moderate oven, standard baking temp. Just like you know 180°C.</p>
+    </section>
+
+    <section class="section">
+      <p>You're following an American cookie recipe. Everything's going perfectly.</p>
+      <p>Then: "Bake at 375°F for 12 minutes."</p>
+      <p>You stop. Pull out your phone. Google "375 fahrenheit to celsius." Get your answer. But next recipe, you'll convert again. And again. Forever.</p>
+      
+      <div class="highlight-box">
+        <p style="margin:0"><strong>What if you could just... know?</strong></p>
+        <p style="margin:8px 0 0">The way you instinctively understand 180°C is a standard baking temperature—you could have that same instant recognition with Fahrenheit.</p>
+      </div>
+
+      <p>No mental math. No phone. No interruption to your baking flow.</p>
+      <p><strong>Dumb Units gives you that understanding in a few weeks of casual daily play.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>How It Works</h2>
+      <p><strong>Visual learning through repetition</strong>—the way your brain actually learns.</p>
+      
+      <div class="card">
+        <h3>The Temperature Bar: Your Visual Guide</h3>
+        <p>You'll see questions like: "British Cornish Pasty bakes at 180°C—what's that in Fahrenheit?"</p>
+        <p>Use our <strong>Temperature Bar</strong>—a visual scale showing both units side-by-side—to help you answer. See the relationship. Build the visual memory.</p>
+        <p>After enough repetitions with real cooking scenarios, the conversions become automatic. You won't need the Temperature Bar anymore. You'll just know.</p>
+      </div>
+
+      <p>It's exactly how you learned Celsius—through repeated exposure in real cooking situations, not by memorizing formulas.</p>
+      <p>We're just compressing years of organic cooking experience into a few weeks of focused practice.</p>
+    </section>
+
+    <section class="section">
+      <h2>Two Games, Complete Fahrenheit Fluency</h2>
+      
+      <div class="card">
+        <h3>Kitchen Game (100°F - 500°F)</h3>
+        <p>Master the cooking and baking temperatures you'll actually use:</p>
+        <ul>
+          <li><strong>Baking zone (325°F - 400°F):</strong> Cookies, cakes, pastries, bread</li>
+          <li><strong>High-heat zone (425°F - 550°F):</strong> Pizza, broiling, fire-roasting</li>
+          <li><strong>Low-and-slow zone (225°F - 300°F):</strong> Braising, smoking, slow roasting</li>
+          <li><strong>Food safety temps (140°F - 165°F):</strong> Proper doneness for meats</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Weather Game (0°F - 100°F)</h3>
+        <p>Understand temperatures for your next trip to America—or when watching American films, meeting American tourists, or following weather news:</p>
+        <ul>
+          <li><strong>Freezing and below (32°F and lower):</strong> Winter weather, snow conditions</li>
+          <li><strong>Cool to mild (40°F - 65°F):</strong> Spring and autumn temperatures</li>
+          <li><strong>Warm to hot (70°F - 90°F):</strong> Summer weather, comfortable temperatures</li>
+          <li><strong>Extreme heat (90°F+):</strong> Hot summer days, desert conditions</li>
+        </ul>
+      </div>
+
+      <p><strong>Both games included.</strong> Over 800 real scenarios total, covering everything from Kentucky Hot Brown recipes to New York weather forecasts.</p>
+    </section>
+
+    <section class="section">
+      <h2>Why This Works Better Than Conversion Apps</h2>
+      <p><strong>Converters give you answers. This gives you understanding.</strong></p>
+      
+      <div class="highlight-box">
+        <p style="margin:0 0 12px"><strong>With a conversion app:</strong></p>
+        <ul style="margin:0">
+          <li>You convert 350°F every single time you see it</li>
+          <li>You never build the instinct</li>
+          <li>You're dependent on your phone forever</li>
+        </ul>
+        
+        <p style="margin:16px 0 12px"><strong>With Dumb Units:</strong></p>
+        <ul style="margin:0">
+          <li>After a few weeks, you don't need to convert anymore</li>
+          <li>The understanding is yours permanently</li>
+          <li>You can follow recipes naturally, without interruption</li>
+        </ul>
+      </div>
+
+      <p>Think about it: When you see 180°C, you don't convert it to Fahrenheit in your head. You just know it's a standard oven temperature. <strong>That's the feeling you'll have with Fahrenheit after using this app.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>Perfect If You:</h2>
+      <ul>
+        <li>Follow American food blogs, YouTube channels, or cookbooks</li>
+        <li>Bake American classics (chocolate chip cookies, brownies, pies, cornbread)</li>
+        <li>Watch American cooking shows and want to follow along</li>
+        <li>Own American baking equipment (often marked in Fahrenheit only)</li>
+        <li>Plan to visit the US and want both kitchen and weather confidence</li>
+        <li>Want to understand temperatures when American tourists visit</li>
+        <li>Watch American TV and films where they mention weather</li>
+        <li>Get frustrated converting every single temperature in every recipe</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>How to Use It</h2>
+      <p><strong>5 minutes a day during morning tea or coffee.</strong></p>
+      <p>Each game gives you 20 questions about real scenarios—cooking temperatures from American cuisine or weather from American cities.</p>
+      <p><strong>Start with the Temperature Bar visible</strong>—use it to answer questions and build visual memory of where temperatures fall.</p>
+      <p><strong>Hide the bar when you feel ready</strong>—test yourself on familiar temperatures. Most people start doing this after the first week or two.</p>
+      <p><strong>Within a few weeks:</strong> Common temperatures feel natural instead of foreign. You'll recognize baking temps automatically and understand American weather forecasts without converting.</p>
+    </section>
+
+    <section class="section">
+      <h2>Completely Free to Try</h2>
+      
+      <div class="card">
+        <h3>Free version (forever):</h3>
+        <ul>
+          <li>One 20-question game daily</li>
+          <li>Both Kitchen and Weather games included</li>
+          <li>Completely ad-free</li>
+          <li>Works offline</li>
+          <li>Enough practice for most people to build fluency</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Unlimited version: <span class="price">$2.99 one-time</span></h3>
+        <ul>
+          <li>Not a subscription—pay once, own forever</li>
+          <li>Practice as many games as you want, whenever you want</li>
+          <li>Perfect if you want to drill specific temperature ranges faster</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Ready to Stop Converting and Start Knowing?</h2>
+      <p style="text-align:center"><strong>Download free on iOS or Android:</strong></p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/us/app/dumb-units/id6754274327?itscg=30200&itsct=apps_box_badge&mttnsubad=6754274327" 
+           class="app-badge" 
+           aria-label="Download on the App Store"
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_baking'}); rdt('track', 'Lead');">
+          <img src="black.svg" alt="Download on the App Store" class="badge-light">
+          <img src="white.svg" alt="Download on the App Store" class="badge-dark">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.dumbunits" 
+           class="app-badge" 
+           aria-label="Get it on Google Play"
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_baking'}); rdt('track', 'Lead');">
+          <img src="googlebadge.svg" alt="Get it on Google Play">
+        </a>
+      </div>
+      <p style="text-align:center;color:var(--muted);margin-top:16px">Works on iPhone, iPad, and Android phones/tablets</p>
+    </section>
+
+    <section class="section">
+      <h2>Questions?</h2>
+      
+      <div class="card">
+        <h3>"How long does it really take?"</h3>
+        <p>Weather temperatures come faster (usually 1-2 weeks of daily play). Cooking temperatures take a bit longer since the range is wider (100-500°F vs 0-100°F for weather)—expect a few weeks of daily practice to feel comfortable across all baking and cooking scenarios.</p>
+      </div>
+
+      <div class="card">
+        <h3>"Do I need to do all 800+ questions?"</h3>
+        <p>No. The questions repeat common temperatures in different contexts, so you'll see 350°F dozens of times in various recipes. Most people feel confident with everyday temperatures well before seeing every question.</p>
+      </div>
+
+      <div class="card">
+        <h3>"What if I just want the Temperature Bar reference?"</h3>
+        <p>The app is designed to help you internalize temperatures so you don't need any reference eventually. But yes, you can keep the Temperature Bar visible permanently if you prefer using it as a quick visual guide.</p>
+      </div>
+
+      <div class="card">
+        <h3>"Is this better than just keeping a conversion chart in my kitchen?"</h3>
+        <p>A static chart doesn't build understanding—you still have to look it up every time. The game gives you repetitions that train your brain to recognize temperatures automatically, the same way you learned Celsius.</p>
+      </div>
+
+      <div class="card">
+        <h3>"Why do I need the Weather game if I just want to cook?"</h3>
+        <p>You don't—focus on whichever game matters to you. But many cooks find it satisfying to understand both ranges, especially if they watch American films, meet American tourists, or plan to visit the US someday.</p>
+      </div>
+
+      <div class="card">
+        <h3>"Can I switch between Kitchen and Weather games?"</h3>
+        <p>Yes—play whichever game you want each day. Some people focus on Kitchen until comfortable, then add Weather. Others alternate. Completely up to you.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Start Building Your Fahrenheit Fluency Today</h2>
+      <p style="text-align:center">No account required. No credit card for free version. Download and start playing immediately.</p>
+      <div class="cta-row">
+        <a href="https://apps.apple.com/us/app/dumb-units/id6754274327?itscg=30200&itsct=apps_box_badge&mttnsubad=6754274327" 
+           class="app-badge" 
+           aria-label="Download on the App Store"
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_baking_bottom'}); rdt('track', 'Lead');">
+          <img src="black.svg" alt="Download on the App Store" class="badge-light">
+          <img src="white.svg" alt="Download on the App Store" class="badge-dark">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.dumbunits" 
+           class="app-badge" 
+           aria-label="Get it on Google Play"
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_baking_bottom'}); rdt('track', 'Lead');">
+          <img src="googlebadge.svg" alt="Get it on Google Play">
+        </a>
+      </div>
+    </section>
+
+    <div class="highlight-box" style="margin-top:40px">
+      <p style="margin:0;font-style:italic;color:var(--muted)"><strong>P.S.</strong> The moment you read "bake at 375°F" and don't reach for your phone—that's when you know it worked. Or when you hear an American say "it's 75 degrees today" and immediately know: pleasant summer weather. The understanding becomes permanent, and American temperatures finally feel natural.</p>
+    </div>
+
+    <footer>
+      <a href="/privacy.html">Privacy & Terms</a> • <a href="/contact.html">Contact</a><br>
+      <small>© 2025 KeepAddIt Works, LLC</small>
+    </footer>
+  </div>
+</body>
+</html>
