@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Moving Abroad? Learn Celsius Before You Go - Dumb Units!</title>
-  <meta name="description" content="Stop converting. Stop nodding along cluelessly. Learn Celsius in weeks, not months of awkward conversations.">
+  <title>Study Abroad? Learn Celsius Now - Dumb Units!</title>
+  <meta name="description" content="Download this free mobile game. Play 5 minutes a day. Arrive already fluent in Celsius.">
   <meta name="color-scheme" content="light dark">
   <style>
     :root{
@@ -17,59 +17,72 @@
              --shadow:0 16px 40px rgba(0,0,0,.45); --accent:#38d0ca; --accent-contrast:#081f1e; }
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%;margin:0;padding:0}
     body{
-      margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
       background: radial-gradient(1200px 600px at 50% -200px, rgba(24,224,216,.15), transparent 70%),
                   radial-gradient(900px 500px at 100% 0, rgba(255,213,76,.12), transparent 60%),
                   var(--bg);
       color:var(--ink); line-height:1.6;
     }
-    .container{max-width:780px;margin:0 auto;padding:28px 20px 72px}
-    .logo-wrap{display:flex;justify-content:center;align-items:center;margin:10px 0 18px}
-    .logo{width:min(680px,92%);height:auto;filter: drop-shadow(0 14px 28px rgba(2,12,27,.12));}
-    .hero{text-align:center;padding:6px 0 14px}
-    .kicker{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-contrast);
+    .container{max-width:780px;margin:0 auto;padding:16px 20px 60px}
+    .logo-wrap{display:flex;justify-content:center;align-items:center;margin:8px 0 12px}
+    .logo{width:min(560px,85%);height:auto;filter: drop-shadow(0 12px 24px rgba(2,12,27,.12));}
+    .hero{text-align:center;padding:4px 0 8px}
+    .kicker{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-contrast);
       background:linear-gradient(90deg, rgba(255,213,76,.35), rgba(24,224,216,.35));border:1px solid var(--line);
-      padding:6px 10px;border-radius:999px;margin-bottom:12px}
-    h1{font-size:clamp(32px,5.5vw,48px);line-height:1.12;margin:6px 0 10px;letter-spacing:-.02em}
-    h2{font-size:clamp(24px,3.4vw,32px);margin:40px 0 16px;line-height:1.2}
-    h3{font-size:22px;margin:24px 0 12px;color:var(--ink)}
-    .sub{font-size:clamp(18px,2.6vw,22px);color:var(--muted);max-width:680px;margin:0 auto}
-    p{margin:16px 0;line-height:1.7}
-    .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:center}
+      padding:5px 9px;border-radius:999px;margin-bottom:8px}
+    h1{font-size:clamp(26px,5vw,42px);line-height:1.15;margin:4px 0 8px;letter-spacing:-.02em}
+    h2{font-size:clamp(22px,3.2vw,30px);margin:36px 0 14px;line-height:1.2}
+    h3{font-size:20px;margin:20px 0 10px;color:var(--ink)}
+    .sub{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:680px;margin:0 auto 12px}
+    p{margin:14px 0;line-height:1.7}
+    .cta-row{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
     .app-badge{display:inline-block;transition:transform .16s ease}
     .app-badge:hover{transform:translateY(-1px)}
     .app-badge img{width:auto;vertical-align:middle}
-    .app-badge:first-of-type img{height:68px}
-    .app-badge:last-of-type img{height:96px}
+    .app-badge:first-of-type img{height:56px}
+    .app-badge:last-of-type img{height:80px}
     .badge-dark{display:none}
     @media (prefers-color-scheme: dark){
       .badge-light{display:none}
       .badge-dark{display:inline-block}
     }
-    .section{margin-top:48px}
-    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin:20px 0;position:relative;overflow:hidden}
+    .section{margin-top:40px}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin:18px 0;position:relative;overflow:hidden}
     .card::after{content:"";position:absolute;inset:auto auto -40px -40px;width:160px;height:160px;background:radial-gradient(80px 80px at 50% 50%, rgba(24,224,216,.18), transparent 70%);transform:rotate(18deg);pointer-events:none}
-    .card h3{font-size:22px;margin:0 0 12px;color:var(--ink)}
+    .card h3{font-size:20px;margin:0 0 10px;color:var(--ink)}
     .card p{margin:8px 0}
-    .highlight-box{background:linear-gradient(90deg, rgba(255,213,76,.12), rgba(24,224,216,.12));border:1px solid var(--line);border-radius:12px;padding:20px;margin:24px 0}
-    .pill{display:inline-block;padding:8px 12px;border-radius:999px;border:1px dashed var(--line);background:linear-gradient(90deg, rgba(255,213,76,.18), rgba(24,224,216,.18));font-weight:600;color:var(--accent-contrast);margin-bottom:12px}
-    ul{line-height:1.8;margin:12px 0;padding-left:20px}
-    ul li{margin:8px 0}
+    .highlight-box{background:linear-gradient(90deg, rgba(255,213,76,.12), rgba(24,224,216,.12));border:1px solid var(--line);border-radius:12px;padding:18px;margin:20px 0}
+    .pill{display:inline-block;padding:7px 11px;border-radius:999px;border:1px dashed var(--line);background:linear-gradient(90deg, rgba(255,213,76,.18), rgba(24,224,216,.18));font-weight:600;color:var(--accent-contrast);margin-bottom:10px}
+    ul{line-height:1.8;margin:10px 0;padding-left:20px}
+    ul li{margin:6px 0}
     strong{color:var(--ink)}
-    .price{font-size:28px;font-weight:700;color:var(--accent)}
-    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+    .price{font-size:26px;font-weight:700;color:var(--accent)}
+    .comparison{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
     .comparison > div{padding:16px;border-radius:12px;border:1px solid var(--line)}
-    .comparison h4{margin:0 0 12px;font-size:18px}
-    .comparison ul{margin:8px 0;font-size:15px}
+    .comparison h4{margin:0 0 10px;font-size:17px}
+    .comparison p{margin:6px 0;font-size:14px}
     @media (max-width: 640px){
       .comparison{grid-template-columns:1fr}
     }
-    footer{margin-top:58px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+    footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:14px}
     footer a{color:var(--muted);text-decoration:none}
     footer a:hover{color:var(--accent);text-decoration:underline}
     @media (prefers-reduced-motion: reduce){ .card,.app-badge{transition:none!important} }
+    
+    /* Ensure above-fold CTAs on mobile */
+    @media (max-width: 480px){
+      .container{padding:12px 16px 50px}
+      .logo{width:min(460px,78%)}
+      h1{font-size:clamp(23px,5.5vw,28px);margin:4px 0 6px}
+      .sub{font-size:15px;margin:0 auto 10px}
+      .hero{padding:2px 0 6px}
+      p{margin:12px 0;font-size:15px}
+      .app-badge:first-of-type img{height:52px}
+      .app-badge:last-of-type img{height:74px}
+      .cta-row{margin-top:14px;gap:8px}
+    }
   </style>
 
   <!-- Google Analytics -->
@@ -95,247 +108,130 @@
     </div>
 
     <section class="hero" aria-label="Intro">
-      <span class="kicker">For Americans moving abroad</span>
-      <h1>Moving abroad? Learn Celsius before you go—not after months of awkward conversations</h1>
-      <p class="sub">Stop converting. Stop nodding along cluelessly. Just <em>know</em> when someone says "it's 22 today."</p>
-    </section>
-
-    <section class="section">
-      <p>You've learned some of the language. You've got the visa sorted. You're ready for your new life abroad.</p>
-      <p>Then your first week: A colleague says "Perfect weather today - 18 degrees!"</p>
-      <p>You smile. You nod. Under the table, you're frantically Googling "18 celsius to fahrenheit."</p>
-      <p><strong>Every. Single. Time.</strong></p>
-      <p>Weather small talk. Weekend plans. Complaining about the heat. The most basic social connection—and you're always half a step behind, phone in hand, missing the natural flow of conversation.</p>
-      
-      <div class="highlight-box">
-        <p style="margin:0"><strong>What if you could just... know?</strong></p>
-        <p style="margin:8px 0 0">The way locals instinctively understand temperatures—you could have that same instant recognition. Join conversations naturally. Feel like you actually belong.</p>
-      </div>
-
-      <p><strong>Dumb Units gets you there in a few weeks, before you even board the plane.</strong></p>
+      <span class="kicker">For study abroad students</span>
+      <h1>Study abroad next semester? Learn Celsius now—not during your first awkward weeks</h1>
+      <p class="sub">Download this free mobile game. Play 5 minutes a day. Arrive already fluent in Celsius.</p>
       
       <div class="cta-row">
         <a href="https://apps.apple.com/us/app/dumb-units/id6754274327?itscg=30200&itsct=apps_box_badge&mttnsubad=6754274327" 
            class="app-badge" 
            aria-label="Download on the App Store"
-           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_amerexit_top'}); rdt('track', 'Lead');">
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_studyabroad_hero'}); rdt('track', 'Lead');">
           <img src="black.svg" alt="Download on the App Store" class="badge-light">
           <img src="white.svg" alt="Download on the App Store" class="badge-dark">
         </a>
         <a href="https://play.google.com/store/apps/details?id=com.dumbunits" 
            class="app-badge" 
            aria-label="Get it on Google Play"
-           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_amerexit_top'}); rdt('track', 'Lead');">
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_studyabroad_hero'}); rdt('track', 'Lead');">
           <img src="googlebadge.svg" alt="Get it on Google Play">
         </a>
       </div>
     </section>
 
     <section class="section">
-      <h2>Why This Matters More Than You Think</h2>
-      <p><strong>All small talk starts with the weather.</strong></p>
-      <p>You spent months learning conjugations and vocabulary. But social connection doesn't happen through perfect grammar—it happens through casual conversation. And in most of the world, that starts with commenting on the temperature.</p>
-      <p>When you can't instinctively relate to weather chat, you're marked as an outsider. Not because locals judge you, but because you can't participate naturally in the easiest, most universal conversation topic.</p>
-      <p><strong>You're not just learning a measurement system. You're learning how to belong.</strong></p>
+      <p>Your semester abroad starts in a few months. You're excited. You're nervous. And every temperature you hear will be in Celsius.</p>
+      <p><strong>Download Dumb Units</strong>—a free game that teaches you Celsius visually in a few weeks of casual play. No memorizing formulas. No boring flashcards. Just 5 minutes a day answering questions about real weather scenarios.</p>
+      <p>By the time you arrive, you'll understand temperatures naturally—no converting, no confusion, no awkward pauses when classmates mention the weather.</p>
+      <p><strong>Free to play daily. Works offline. Takes less time than scrolling social media.</strong></p>
     </section>
 
     <section class="section">
-      <h2>The Real Cost of Always Converting</h2>
-      <p><strong>It's not about the math. It's about the moment.</strong></p>
-      <p>When someone mentions the temperature and you need to convert:</p>
-      <ul>
-        <li>You miss the chance to agree or commiserate naturally</li>
-        <li>You can't make weekend plans based on weather spontaneously</li>
-        <li>You seem distracted (because you are—you're doing math in your head)</li>
-        <li>You feel like a tourist in your own neighborhood</li>
-      </ul>
-      <p>After months of this, you'll eventually learn Celsius organically. But those first months? You'll spend them feeling left out of the most basic conversations.</p>
-    </section>
-
-    <section class="section">
-      <h2>How Dumb Units Works</h2>
-      <p><strong>Visual learning through repetition</strong>—skip the awkward learning phase entirely.</p>
+      <h2>Why Learn Before You Go?</h2>
+      <p><strong>Your first week abroad: A classmate says "Want to study outside? It's perfect - 18 degrees!"</strong></p>
       
-      <div class="card">
-        <h3>The Temperature Bar: Your Training Tool</h3>
-        <p>You'll see questions about real weather scenarios from cities worldwide—spring days in Amsterdam, summer heat in Barcelona, winter chill in Stockholm.</p>
-        <p>Use our <strong>Temperature Bar</strong>—a visual scale showing both units side-by-side—to help you answer. See the relationship. Build the visual memory.</p>
-        <p>After enough repetitions, the conversions become automatic. You won't need the Temperature Bar anymore. You'll just know.</p>
+      <div class="comparison">
+        <div style="background:var(--surface)">
+          <h4>Option 1: You haven't learned Celsius yet</h4>
+          <p>Is that warm? Cold? Do you need a jacket? While you're converting in your head, the moment's gone.</p>
+        </div>
+        <div style="background:linear-gradient(135deg, rgba(24,224,216,.08), rgba(255,213,76,.08))">
+          <h4>Option 2: You spent a few weeks playing Dumb Units</h4>
+          <p>You immediately know: pleasant spring day, light jacket weather. You grab your stuff and go.</p>
+        </div>
       </div>
 
-      <p>It's exactly how you'll eventually learn Celsius anyway—through repeated exposure in real situations, not by memorizing formulas.</p>
-      <p><strong>We're just compressing 6-12 months of awkward organic learning into a few weeks of casual daily practice.</strong></p>
+      <p><strong>All small talk starts with the weather.</strong> Understanding Celsius means one less barrier between you and your new friends.</p>
     </section>
 
     <section class="section">
-      <h2>Two Games for Complete Temperature Fluency</h2>
+      <h2>How It Works</h2>
+      
+      <div class="card">
+        <h3>1. See the question</h3>
+        <p>"A perfect spring day in Paris is 18°C—what's that in Fahrenheit?"</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Use the Temperature Bar</h3>
+        <p>A visual scale showing both units side-by-side helps you answer.</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Build the visual memory</h3>
+        <p>After enough repetitions, you won't need the bar. You'll just know.</p>
+      </div>
+
+      <p style="text-align:center"><strong>Most people feel comfortable with everyday temperatures after 1-2 weeks of daily play.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2>Two Games Included</h2>
       
       <div class="card">
         <h3>Weather Game (0°C - 40°C)</h3>
-        <p>Master the everyday temperatures you'll hear constantly:</p>
-        <ul>
-          <li><strong>Freezing and below (0°C and lower):</strong> Winter weather, snow, ice warnings</li>
-          <li><strong>Cool to mild (5°C - 15°C):</strong> Spring and autumn, jacket weather</li>
-          <li><strong>Comfortable (16°C - 24°C):</strong> Pleasant days, outdoor socializing</li>
-          <li><strong>Warm to hot (25°C - 35°C):</strong> Summer weather, beach days, heat waves</li>
-        </ul>
-        <p style="margin-top:12px">Practice with real scenarios from global cities so temperatures come with cultural context, not just numbers.</p>
+        <p>The daily temperatures you'll hear constantly—from winter freeze to summer heat.</p>
       </div>
 
       <div class="card">
         <h3>Kitchen Game (100°C - 260°C)</h3>
-        <p>Understand global recipes and cooking:</p>
-        <ul>
-          <li><strong>Baking temperatures (160°C - 200°C):</strong> Cakes, bread, pastries</li>
-          <li><strong>Roasting (180°C - 220°C):</strong> Vegetables, meats</li>
-          <li><strong>High heat (230°C+):</strong> Pizza, broiling</li>
-        </ul>
+        <p>For cooking in your student housing (when you're not eating out).</p>
       </div>
 
-      <p><strong>Both games included.</strong> Over 800 real scenarios total.</p>
+      <p><strong>Over 800 scenarios total.</strong> Completely free to play one game daily.</p>
     </section>
 
     <section class="section">
-      <h2>Why This Beats "Just Learning It When You Get There"</h2>
-      <p><strong>You'll learn it eventually. But why wait?</strong></p>
-      
-      <div class="comparison">
-        <div style="background:var(--surface)">
-          <h4>Learning organically after moving:</h4>
-          <ul>
-            <li>6-12 months of awkward conversions</li>
-            <li>Miss casual social connections during critical first months</li>
-            <li>Always feel half-present in basic conversations</li>
-            <li>One more thing making adjustment harder</li>
-          </ul>
-        </div>
-        <div style="background:linear-gradient(135deg, rgba(24,224,216,.08), rgba(255,213,76,.08))">
-          <h4>Learning with Dumb Units before moving:</h4>
-          <ul>
-            <li>A few weeks of casual 5-minute daily practice</li>
-            <li>Arrive already comfortable with temperatures</li>
-            <li>Join weather conversations from day one</li>
-            <li>One less barrier to integration</li>
-          </ul>
-        </div>
-      </div>
-
-      <p><strong>Your first months abroad are precious.</strong> You're building your social network, proving yourself at work, establishing your new identity. Why make basic temperature chat another hurdle?</p>
-    </section>
-
-    <section class="section">
-      <h2>Arrive as Someone Who Gets It</h2>
-      <p><strong>Understanding Celsius isn't just practical—it shows you're adapting.</strong></p>
-      <p>When you can discuss the weather naturally, comment on weekend plans based on the forecast, complain about the heat wave with your neighbors—you're not translating anymore. You're participating.</p>
-      <p>It's one of dozens of small adjustments you'll make. But it's one you can knock out before you move, so your first months can focus on bigger challenges.</p>
-    </section>
-
-    <section class="section">
-      <h2>How to Use It</h2>
-      <p><strong>5 minutes a day during your morning coffee.</strong></p>
-      <p>Each game gives you 20 questions about real scenarios—weather from cities worldwide or cooking temperatures from European recipes.</p>
-      <p><strong>Start with the Temperature Bar visible</strong>—use it to answer questions and build visual memory of where temperatures fall.</p>
-      <p><strong>Hide the bar when you feel ready</strong>—test yourself on familiar temperatures. Most people start doing this after the first week or two.</p>
-      <p><strong>Within a few weeks:</strong> Common temperatures feel natural. You'll understand weather forecasts, make plans spontaneously, and join conversations without missing a beat.</p>
-      <p><strong>Start before you move. Arrive already comfortable. Make those crucial first months easier.</strong></p>
-    </section>
-
-    <section class="section">
-      <h2>Completely Free to Try</h2>
+      <h2>Free Forever or Unlock Unlimited</h2>
       
       <div class="card">
-        <h3>Free version (forever):</h3>
+        <h3>Free version:</h3>
         <ul>
-          <li>One 20-question game daily</li>
-          <li>Both Weather and Kitchen games included</li>
-          <li>Completely ad-free</li>
-          <li>Works offline</li>
-          <li>Enough practice for most people to build fluency</li>
+          <li>One 20-question game daily (5 minutes)</li>
+          <li>Both Weather and Kitchen games</li>
+          <li>No ads, works offline</li>
+          <li>Enough for most people to build fluency</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Unlimited version: <span class="price">$2.99 one-time</span></h3>
-        <ul>
-          <li>Not a subscription—pay once, own forever</li>
-          <li>Practice as many games as you want, whenever you want</li>
-          <li>Perfect if you're moving soon and want to drill faster</li>
-        </ul>
+        <p>Practice as much as you want, whenever you want. (Not a subscription—pay once, own forever)</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>Ready to Arrive Prepared?</h2>
-      <p style="text-align:center"><strong>Download free on iOS or Android:</strong></p>
+      <h2>Start Now. Arrive Confident.</h2>
       <div class="cta-row">
         <a href="https://apps.apple.com/us/app/dumb-units/id6754274327?itscg=30200&itsct=apps_box_badge&mttnsubad=6754274327" 
            class="app-badge" 
            aria-label="Download on the App Store"
-           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_amerexit'}); rdt('track', 'Lead');">
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_studyabroad_bottom'}); rdt('track', 'Lead');">
           <img src="black.svg" alt="Download on the App Store" class="badge-light">
           <img src="white.svg" alt="Download on the App Store" class="badge-dark">
         </a>
         <a href="https://play.google.com/store/apps/details?id=com.dumbunits" 
            class="app-badge" 
            aria-label="Get it on Google Play"
-           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_amerexit'}); rdt('track', 'Lead');">
+           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_studyabroad_bottom'}); rdt('track', 'Lead');">
           <img src="googlebadge.svg" alt="Get it on Google Play">
         </a>
       </div>
-      <p style="text-align:center;color:var(--muted);margin-top:16px">Works on iPhone, iPad, and Android phones/tablets</p>
+      <p style="text-align:center;color:var(--muted);margin-top:14px;font-size:14px">Works on iPhone, iPad, and Android phones/tablets</p>
     </section>
 
-    <section class="section">
-      <h2>Questions?</h2>
-      
-      <div class="card">
-        <h3>"How long does it really take?"</h3>
-        <p>Weather temperatures (the ones you'll use daily) usually take 1-2 weeks of casual daily practice. You'll feel comfortable with everyday temperatures well before your move. Kitchen temperatures take a bit longer since the range is wider, but weather fluency is what matters most for social integration.</p>
-      </div>
-
-      <div class="card">
-        <h3>"I'm moving in 3 months—is that enough time?"</h3>
-        <p>Absolutely. Even playing just the free daily game (5 minutes), you'll be comfortable with Celsius long before you move. If you're moving sooner, the $2.99 unlimited version lets you practice more intensively.</p>
-      </div>
-
-      <div class="card">
-        <h3>"Can't I just learn it after I arrive?"</h3>
-        <p>You will eventually. But your first few months are when you're most vulnerable, most lonely, most desperate to connect. Why make weather small talk—the easiest way to connect with neighbors and colleagues—another barrier?</p>
-      </div>
-
-      <div class="card">
-        <h3>"What if I just want weather, not cooking?"</h3>
-        <p>Focus on whichever game matters to you. Many people start with Weather since that's the daily conversation need, then add Kitchen later. Completely up to you.</p>
-      </div>
-
-      <div class="card">
-        <h3>"Will this actually help me integrate?"</h3>
-        <p>It's less about what locals notice and more about your own confidence. When you can respond naturally to weather chat without pausing to convert, you feel more present in conversations. You're not half-listening while doing mental math—you're actually engaged. That confidence shows up in dozens of small moments: agreeing to outdoor plans spontaneously, chatting with neighbors about the forecast, joining colleagues for lunch on a nice day. It's one less thing to think about, leaving you more mental space to actually connect.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Start Now. Arrive Ready.</h2>
-      <p style="text-align:center">No account required. No credit card for free version. Download and start practicing today.</p>
-      <div class="cta-row">
-        <a href="https://apps.apple.com/us/app/dumb-units/id6754274327?itscg=30200&itsct=apps_box_badge&mttnsubad=6754274327" 
-           class="app-badge" 
-           aria-label="Download on the App Store"
-           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'ios_reddit_amerexit_bottom'}); rdt('track', 'Lead');">
-          <img src="black.svg" alt="Download on the App Store" class="badge-light">
-          <img src="white.svg" alt="Download on the App Store" class="badge-dark">
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.dumbunits" 
-           class="app-badge" 
-           aria-label="Get it on Google Play"
-           onclick="gtag('event', 'click', {'event_category': 'app_store', 'event_label': 'android_reddit_amerexit_bottom'}); rdt('track', 'Lead');">
-          <img src="googlebadge.svg" alt="Get it on Google Play">
-        </a>
-      </div>
-    </section>
-
-    <div class="highlight-box" style="margin-top:40px">
-      <p style="margin:0;font-style:italic;color:var(--muted)"><strong>P.S.</strong> Your first week abroad, a neighbor will mention the weather. You'll respond naturally, without hesitation, without converting. They won't think "impressive." They'll just think you're normal. And after the stress of planning an international move, normal feels like belonging.</p>
+    <div class="highlight-box" style="margin-top:36px">
+      <p style="margin:0;font-style:italic;color:var(--muted)"><strong>P.S.</strong> Week two abroad, someone checks their phone: "20 degrees tomorrow—perfect for that day trip." You'll agree immediately, naturally, without thinking. That's when you'll realize: you're not the exchange student anymore. You're just part of the group.</p>
     </div>
 
     <footer>
